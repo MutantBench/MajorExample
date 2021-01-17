@@ -7,6 +7,8 @@ function generate {
 
 
 function MBAvoidEquivalentMutants {
+    mkdir -p $TOOL_HOME/build/classes
+    mkdir -p $TOOL_HOME/src
     path=$1
     for program_dir in $path/*; do
         rm -r $TOOL_HOME/src/*
