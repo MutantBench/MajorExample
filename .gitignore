@@ -1,2 +1,4 @@
 mutants/*
 mutants.log
+build/*
+src/*
