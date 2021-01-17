@@ -17,8 +17,12 @@ function MBAvoidEquivalentMutants {
         for mutant_path in $TOOL_HOME/mutants/*; do
             mutant_name=`basename $mutant_path`
             mp=`ls -d $mutant_path/* | head -n 1`
-            # TODO: add package support
+
+            while [[ ! -f $mp ]]; do
+                mp=`ls -d $mp/* | head -n 1`
+            done
             mutant="$mp"
+
             cp $mutant $program_dir/mutants/$mutant_name.java
         done;
 
